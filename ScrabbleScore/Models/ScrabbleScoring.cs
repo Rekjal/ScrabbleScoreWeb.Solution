@@ -4,33 +4,26 @@ using System.Linq;
 
 namespace ScrabbleScore.Models
 {
-  public class ScrabbleScoring
-  {
-    public string PlayedWord { get; set; }
-    private static char[] _scoreOne = {'A','E','I','O','U','L','N','R','S','T'};
+    public class ScrabbleScoring
+    {
+        public string Word { get; set; }
 
-    private static char[] _scoreTwo = {'D','G'};
-    private static Dictionary<char[],int> _wordScores = new Dictionary<char[],int>() { {_scoreOne,1}, {_scoreTwo,2} };
-    public ScrabbleScoring(string playedWord)
-    {
-      PlayedWord = playedWord;
-    }
-    public int GetScore()
-    {
-      char[] wordArray = PlayedWord.ToCharArray();
-      int wordScore = 0;
-      foreach(char element in wordArray)
-      {
-        if (_scoreOne.Contains(element))
+        public ScrabbleScoring(string word)
         {
-          wordScore = wordScore + _wordScores[_scoreOne];
+            Word = word;
         }
-        else if (_scoreTwo.Contains(element))
+
+        public int GetScore()
         {
-          wordScore = wordScore + _wordScores[_scoreTwo];
+            string userEnteredWord = Word.ToUpper();
+            var letterValue = new Dictionary<string, int>() {  {"A", 1},{"E", 1},{"I", 1},{"O", 1},{"U", 1},{"L", 1},{"N", 1},{"R", 1},{"S", 1},{"T", 1},{"D", 2},{"G", 2},
+            {"B", 2},{"C", 2},{"M", 2},{"P", 2}, {"F", 3},{"H", 3},{"V", 3},{"W", 3}, {"Y", 3}, {"K", 5}, {"J", 8},{"X", 8}, {"Q", 10},{"Z", 10} };
+            int score = 0;
+            foreach (char letter in userEnteredWord)
+            {
+                score = score + letterValue[letter.ToString()];  //Char.ToString
+            }
+            return score;
         }
-      }
-      return wordScore;
     }
-  }
 }
