@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Here is your scrabble score!</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  </head>
+  <body>
+    @* <h1>Welcome To Scrabble Score for Web!</h1> *@
+    @* <form action="/wordscore" method="post">
+      <label for="word">Enter your word</label>
+      <input id="word" name="word" type="text">
+      <button type="submit">See your score!</button>
+    </form> *@
+    <p>Your score is <span style="color:red;">@Model.GetScore()</span></p>
+  </body>
+</html>
