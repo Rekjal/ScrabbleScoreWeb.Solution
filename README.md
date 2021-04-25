@@ -13,7 +13,7 @@
 
 ## Description
 
-_This console program takes a word as a user input and returns the sum of the letters in the word converted into their Scrabble point values._
+_This web app takes a word as a user input and returns the sum of the letters in the word converted into their Scrabble point values._
 
 ## Setup/Installation Requirements
 
