@@ -24,7 +24,8 @@ namespace ScrabbleScore.Models
     }
     public int GetScore()
     {
-      char[] wordArray = PlayedWord.ToCharArray();
+      string capsWord = PlayedWord.ToUpper();
+      char[] wordArray = capsWord.ToCharArray();
       int wordScore = 0;
       foreach(char element in wordArray)
       {
